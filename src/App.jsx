@@ -8,11 +8,26 @@ import { BsPersonVcardFill } from 'react-icons/bs';
 import { GoPersonFill } from 'react-icons/go';
 import { FaDownload, FaStar } from 'react-icons/fa';
 import { RiGraduationCapFill } from 'react-icons/ri';
+import { RxCross1 } from 'react-icons/rx';
+
 
 function App() {
   const [showModal, setShowModal] = useState(false);
-  const [showSecondModal, setShowSecondModal]=useState(false);
-  const [showThirdModal, setShowThirdModal]=useState(false);
+  const [showSecondModal, setShowSecondModal] = useState(true);  
+  const [showThirdModal, setShowThirdModal] = useState(false);
+  const [activeButton, setActiveButton] = useState('education'); 
+
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
+
+    if (button === 'education') {
+      setShowSecondModal(true);
+      setShowThirdModal(false);
+    } else {
+      setShowSecondModal(false);
+      setShowThirdModal(true);
+    }
+  }
 
   return (
     <div className="bg-neutral-900 min-h-screen grid grid-cols-1 grid-rows-5 lg:grid-cols-3 lg:grid-rows-2 p-6 gap-6 relative">
@@ -62,20 +77,37 @@ function App() {
         get <span className="text-orange-400">in touch</span>
       </div>
 
-      {/* Modal */}
+      {/* Modal 1 */}
       {showModal && (
-  <div className="absolute inset-0 flex justify-center items-center  bg-black/70 z-10">
-    <div className="bg-neutral-800 p-6 w-2/3 max-h-[90vh] overflow-y-auto scrollbar scrollbar-thumb-gray-600 scrollbar-track-white text-center">
-      <h2 className="text-6xl text-white font-bold mb-4">About <span className='text-orange-400'>Me</span></h2>
+  <div className=''>
+    <div className="absolute inset-0 flex justify-center items-center  bg-black/70 z-10">
+    <div className="bg-neutral-800 p-3 lg:p-6 lg:w-2/3 m-3 max-h-[90vh] overflow-y-auto scrollbar scrollbar-thumb-gray-600 scrollbar-track-white text-center">
+   
+     
+      <button
+        className="absolute top-10 lg:right-12 right-2 text-white  text-3xl"
+        onClick={() => setShowModal(false)}
+      >
+       <RxCross1 />
+      </button>
+     <h2 className="lg:text-6xl text-2xl text-white font-bold mb-4">About <span className='text-orange-400'>Me</span></h2>
+    
       {/* div 1 */}
-      <div className='flex flex-row justify-center items-center gap-4 mt-10'>
+      <div className='flex flex-row justify-center items-center gap-4 mt-5 lg:mt-10'>
         <hr className='w-1/2 border-t-2 border-white' />
         <BsPersonVcardFill className='text-2xl text-orange-400' />
         <hr className='w-1/2 border-t-2 border-white' />
       </div>
-      {/* div 2 */}
-      <div className='mt-10'>
-      <div className='flex flex-row justify-start items-start gap-2 '>
+      {/* medium screen */}
+      <div className='flex flex-col md:flex-row justify-start items-start gap-10 '>
+        {/* image for small screen */}
+      <div className='mt-10 block lg:hidden '>
+        <img src={portfolioImage} className='bg-black md:w-[2000px]' alt="" />
+      </div>
+      <div>
+        {/* div 2 */}
+    
+      <div className='md:mt-10 flex flex-row justify-start items-start gap-2 '>
       <GoPersonFill className='text-white text-2xl' />
       <p className='text-white text-xl uppercase'> Personal Info</p>
       </div>
@@ -85,7 +117,7 @@ function App() {
 
       </div>
       {/* div 3 */}
-      <div className='mt-5 flex flex-row justify-start items-start gap-20'>
+      <div className='lg:mt-5 mt-10 flex lg:flex-row flex-col justify-start items-start lg:gap-20 '>
         <div >
           <ol className='text-start'>
             <li className='uppercase text-white text-xs mb-3'><span className='font-bold'>first name :</span> Nobanita</li>
@@ -96,28 +128,32 @@ function App() {
         <div>
         <ol className='text-start'>
             <li className='uppercase text-white text-xs mb-3'><span className='font-bold'>phone :</span> +880-1862986204</li>
-            <li className=' text-white text-xs mb-3'><span className='font-bold uppercase'>email :</span> nobanitaayathree333@gmail.com</li>
-            <li className='uppercase text-white text-xs mb-3'><span className='font-bold'>spoken languages :</span> Bengali-English</li>
+            <li className=' text-white  mb-3'><span className='font-bold uppercase text-xs'>email :</span> <span className='text-xm'>nobanitaayathree333@gmail.com</span></li>
+            <li className='uppercase text-white text-xs mb-3'><span className='font-bold'>spoken languages :</span> Bengali - English</li>
           </ol>
         </div>
       </div>
       {/* div 4 */}
       <div className='mt-10'>
-        <button className='bg-orange-400 text-white font-semibold text-xl uppercase flex justify-center items-center gap-2 p-3'>download resume <FaDownload className='text-white' /></button>
+        <button className='bg-orange-400 text-white font-semibold text-xl uppercase flex justify-center items-center gap-2 p-3 ' >download resume <FaDownload className='text-white' /></button>
+      </div>
+      </div>
       </div>
       {/* div 5 */}
       <hr className='mt-10' />
       {/* div 6 */}
-      <div className='mt-20 flex flex-row justify-between items-center gap-10 '>
+     <div className='hidden lg:block'>
+     <div className='mt-20 flex flex-row justify-between items-center gap-10  '>
         <div className='flex flex-col justify-center items-center gap-5 flex-1'>
-        <button className='outline text-white font-semibold text-xl uppercase flex justify-start items-center gap-2 px-5 py-3 w-full' onClick={() => setShowSecondModal(true)}><RiGraduationCapFill className='text-white' />education</button>
-        <button className='outline text-white font-semibold text-xl uppercase flex justify-start items-center gap-2 px-5 py-3 w-full ' onClick={() => setShowThirdModal(true)}> <FaStar className='text-white' />skills</button>
+        <button className={`outline text-white font-semibold text-xl uppercase flex justify-start items-center gap-2 px-5 py-3 w-full ${activeButton === 'education' ? 'bg-orange-400 outline-0' : ''}`}
+        onClick={() => handleButtonClick('education')}><RiGraduationCapFill className='text-white' />education</button>
+        <button className={`outline text-white font-semibold text-xl uppercase flex justify-start items-center gap-2 px-5 py-3 w-full ${activeButton === 'skills' ? 'bg-orange-400 outline-0' : ''}`} 
+        onClick={() => handleButtonClick('skills')}> <FaStar className='text-white' />skills</button>
         </div>
         <div>
           {/* part div 1 */}
         {
-          showSecondModal && (
-            <div className="hero bg-base-200 min-h-screen ">
+          showSecondModal && <div className="hero bg-base-200 min-h-screen ">
           <div className="hero-content text-center ">
             <div >
               <h1 className="text-5xl font-bold">Hello there</h1>
@@ -129,12 +165,10 @@ function App() {
             </div>
           </div>
         </div>
-          )
         }
 {/* part div 2 */}
 {
-  showThirdModal && (
-    <div className="hero bg-base-200 min-h-screen  ">
+  showThirdModal && <div className="hero bg-base-200 min-h-screen  ">
   <div className="hero-content text-center ">
     <div >
       <h1 className="text-5xl font-bold">bye there</h1>
@@ -146,22 +180,47 @@ function App() {
     </div>
   </div>
 </div>
-  )
 }
         </div>
       </div>
+     </div>
+     {/* div 7 for small screen */}
+     <div className='block lg:hidden'>
+      {/* sun div 7 */}
+     <div className="hero bg-black min-h-screen mt-10 ">
+          <div className="hero-content text-center ">
+            <div >
+              <h1 className="text-5xl font-bold">Hello there</h1>
+              <p className="py-6">
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                quasi. In deleniti eaque aut repudiandae et a id nisi.
+              </p>
+              <button className="btn btn-primary">Get Started</button>
+            </div>
+          </div>
+        </div>
+        {/* sub div 7 */}
+        <div className="hero bg-black min-h-screen mt-10 ">
+          <div className="hero-content text-center ">
+            <div >
+              <h1 className="text-5xl font-bold">Hello there</h1>
+              <p className="py-6">
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                quasi. In deleniti eaque aut repudiandae et a id nisi.
+              </p>
+              <button className="btn btn-primary">Get Started</button>
+            </div>
+          </div>
+        </div>
+     </div>
 
-      </div>
+      
       <p className="text-gray-700">
        
       </p>
-      <button
-        className="mt-4 px-4 py-2 bg-orange-400 text-white font-bold rounded"
-        onClick={() => setShowModal(false)}
-      >
-        Close
-      </button>
+      
     </div>
+  </div>
   </div>
 )}
 
