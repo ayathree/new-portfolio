@@ -1,0 +1,14 @@
+/* Style the scrollbar for the modal */
+.modal-scroll::-webkit-scrollbar {
+    width: 8px; /* Adjust width as needed */
+  }
+  
+  .modal-scroll::-webkit-scrollbar-thumb {
+    background: white; /* Scroll thumb color */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .modal-scroll::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Track background */
+  }
+  
