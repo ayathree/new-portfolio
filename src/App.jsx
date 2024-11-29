@@ -7,7 +7,7 @@ import animation from './assets/Animation - 1732779013753.json';
 import { useState } from 'react';
 import { BsPersonVcardFill } from 'react-icons/bs';
 import { GoPersonFill } from 'react-icons/go';
-import {  FaComments, FaCss3Alt, FaDownload, FaFigma, FaGit, FaGithub, FaHtml5, FaLinkedin, FaLinkedinIn, FaLocationArrow, FaNodeJs, FaReact, FaRegCalendar, FaStar } from 'react-icons/fa';
+import {  FaComments, FaCss3Alt, FaDownload, FaFigma, FaGit, FaGithub, FaHtml5,  FaLinkedinIn, FaLocationArrow, FaNodeJs, FaReact, FaRegCalendar, FaStar } from 'react-icons/fa';
 import { RiFirebaseFill, RiGraduationCapFill, RiTailwindCssFill } from 'react-icons/ri';
 import { RxCross1 } from 'react-icons/rx';
 import { IoLogoJavascript, IoMdMail } from 'react-icons/io';
