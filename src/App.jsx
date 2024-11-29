@@ -6,9 +6,11 @@ import animation from './assets/Animation - 1732779013753.json';
 import { useState } from 'react';
 import { BsPersonVcardFill } from 'react-icons/bs';
 import { GoPersonFill } from 'react-icons/go';
-import { FaDownload, FaStar } from 'react-icons/fa';
-import { RiGraduationCapFill } from 'react-icons/ri';
+import { FaCss3Alt, FaDownload, FaFigma, FaGit, FaHtml5, FaNodeJs, FaReact, FaRegCalendar, FaStar } from 'react-icons/fa';
+import { RiFirebaseFill, RiGraduationCapFill, RiTailwindCssFill } from 'react-icons/ri';
 import { RxCross1 } from 'react-icons/rx';
+import { IoLogoJavascript } from 'react-icons/io';
+import { SiExpress, SiMongodb, SiVercel } from 'react-icons/si';
 
 
 function App() {
@@ -153,30 +155,59 @@ function App() {
         <div>
           {/* part div 1 */}
         {
-          showSecondModal && <div className="hero bg-base-200 min-h-screen ">
-          <div className="hero-content text-center ">
+          showSecondModal && <div className=" bg-neutral-800 min-h-screen border-white border-2   ">
+          <div className="  ">
             <div >
-              <h1 className="text-5xl font-bold">Hello there</h1>
-              <p className="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                quasi. In deleniti eaque aut repudiandae et a id nisi.
+              <div className='bg-black'>
+              <h1 className="text-3xl font-bold uppercase text-orange-400 flex justify-center items-center gap-2 pt-10">education <RiGraduationCapFill></RiGraduationCapFill></h1>
+              <hr className='text-3xl font-bold bg-white mt-10' />
+              </div>
+              
+              <div className='mt-10 px-8'>
+                <p className="text-white text-lg text-start uppercase"><span className='font-bold'>Bachelor Degree -</span> premier university, chittangong
+                </p>
+              <p className="text-white text-start mt-2 flex justify-start items-center gap-2"><FaRegCalendar />
+               2019-2024   
               </p>
-              <button className="btn btn-primary">Get Started</button>
+              <p className='text-white text-start mt-2 uppercase'>computer science and engineering  
+              </p>
+              <p className='text-xs text-white text-start mt-2'>During my studies, I focused on programming, data structures, and software development. My education equipped me with a strong foundation in front-end technologies, while I am currently enhancing my skills in back-end development.</p>
+              <hr className='mt-7 text-start w-1/4  ' />
+              
+              </div>
+            
             </div>
           </div>
         </div>
         }
 {/* part div 2 */}
 {
-  showThirdModal && <div className="hero bg-base-200 min-h-screen  ">
-  <div className="hero-content text-center ">
+  showThirdModal && <div className=" bg-neutral-800 min-h-screen border-white border-2    ">
+  <div className="  ">
     <div >
-      <h1 className="text-5xl font-bold">bye there</h1>
-      <p className="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
-      </p>
-      <button className="btn btn-primary">Get Started</button>
+      <div className='bg-black'>
+      <h1 className="text-3xl font-bold uppercase text-orange-400 flex justify-center items-center gap-2 pt-10">skills <FaStar></FaStar></h1>
+      <hr className='text-3xl font-bold bg-white mt-10' />
+      </div>
+      <div className='mt-5'>
+        <p className='text-white text-start px-5'>Here are the technologies and tools I excel at, which enable me to craft robust and user-friendly web applications.</p>
+      </div>
+  <div className=' px-5 grid grid-cols-2 grid-rows-6 justify-start items-start gap-5 py-5 '>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><FaCss3Alt className='text-orange-400' />CSS</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><FaHtml5 className='text-orange-400' />HTML</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><IoLogoJavascript className='text-orange-400' />JavaScript</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><FaReact className='text-orange-400' />ReactJS</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><SiMongodb className='text-orange-400' />MongoDB</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><FaNodeJs className='text-orange-400' />NodeJS</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><SiExpress className='text-orange-400' />ExpressJS</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><RiFirebaseFill className='text-orange-400'/>Firebase</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><FaFigma className='text-orange-400' />Figma</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><FaGit className='text-orange-400' />Git</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><SiVercel className='text-orange-400' />Vercel</div>
+        <div className='flex justify-start items-center gap-2 text-white font-bold text-xl'><RiTailwindCssFill className='text-orange-400' />Tailwind CSS</div>
+      
+      </div>
+    
     </div>
   </div>
 </div>
@@ -187,31 +218,60 @@ function App() {
      {/* div 7 for small screen */}
      <div className='block lg:hidden'>
       {/* sun div 7 */}
-     <div className="hero bg-black min-h-screen mt-10 ">
-          <div className="hero-content text-center ">
+      <div className=" bg-neutral-800 min-h-screen border-white border-2   ">
+          <div className="  ">
             <div >
-              <h1 className="text-5xl font-bold">Hello there</h1>
-              <p className="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                quasi. In deleniti eaque aut repudiandae et a id nisi.
+              <div className='bg-black'>
+              <h1 className="text-3xl font-bold uppercase text-orange-400 flex justify-center items-center gap-2 pt-10">education <RiGraduationCapFill></RiGraduationCapFill></h1>
+              <hr className='text-3xl font-bold bg-white mt-10' />
+              </div>
+              
+              <div className='mt-10 px-8'>
+                <p className="text-white lg:text-lg  text-start uppercase"><span className='font-bold'>Bachelor Degree -</span> premier university, chittangong
+                </p>
+              <p className="text-white text-start mt-2 flex justify-start items-center gap-2"><FaRegCalendar />
+               2019-2024   
               </p>
-              <button className="btn btn-primary">Get Started</button>
+              <p className='text-white text-start mt-2 uppercase text-xm '>computer science and engineering  
+              </p>
+              <p className='text-xs text-white text-start mt-2'>During my studies, I focused on programming, data structures, and software development. My education equipped me with a strong foundation in front-end technologies, while I am currently enhancing my skills in back-end development.</p>
+              <hr className='mt-7 text-start w-1/4  ' />
+              
+              </div>
+            
             </div>
           </div>
         </div>
         {/* sub div 7 */}
-        <div className="hero bg-black min-h-screen mt-10 ">
-          <div className="hero-content text-center ">
-            <div >
-              <h1 className="text-5xl font-bold">Hello there</h1>
-              <p className="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                quasi. In deleniti eaque aut repudiandae et a id nisi.
-              </p>
-              <button className="btn btn-primary">Get Started</button>
-            </div>
-          </div>
-        </div>
+        <div className=" bg-neutral-800 min-h-screen border-white border-2 mt-5   ">
+  <div className="  ">
+    <div >
+      <div className='bg-black'>
+      <h1 className="text-3xl font-bold uppercase text-orange-400 flex justify-center items-center gap-2 pt-10">skills <FaStar></FaStar></h1>
+      <hr className='text-3xl font-bold bg-white mt-10' />
+      </div>
+      <div className='mt-5 hidden lg:block'>
+        <p className='text-white text-start px-5'>Here are the technologies and tools I excel at, which enable me to craft robust and user-friendly web applications.</p>
+      </div>
+  <div className=' px-5 grid grid-cols-2 grid-rows-6 justify-start items-start gap-5 py-5 '>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><FaCss3Alt className='text-orange-400' />CSS</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><FaHtml5 className='text-orange-400' />HTML</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><IoLogoJavascript className='text-orange-400' />JavaScript</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><FaReact className='text-orange-400' />ReactJS</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><SiMongodb className='text-orange-400' />MongoDB</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><FaNodeJs className='text-orange-400' />NodeJS</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><SiExpress className='text-orange-400' />ExpressJS</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><RiFirebaseFill className='text-orange-400'/>Firebase</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><FaFigma className='text-orange-400' />Figma</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><FaGit className='text-orange-400' />Git</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><SiVercel className='text-orange-400' />Vercel</div>
+        <div className='flex justify-start items-center gap-2 text-white lg:font-bold lg:text-xl'><RiTailwindCssFill className='text-orange-400' />Tailwind CSS</div>
+      
+      </div>
+    
+    </div>
+  </div>
+</div>
      </div>
 
       
