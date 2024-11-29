@@ -13,6 +13,7 @@ import { RxCross1 } from 'react-icons/rx';
 import { IoLogoJavascript, IoMdMail } from 'react-icons/io';
 import { SiExpress, SiMongodb, SiVercel } from 'react-icons/si';
 import {  IoMailOpenSharp, IoPerson } from 'react-icons/io5';
+import resume from './assets/Nobanita Ayathree Resume.pdf'
 
 
 function App() {
@@ -178,7 +179,7 @@ function App() {
       </div>
       {/* div 4 */}
       <div className='mt-10'>
-        <button className='bg-orange-400 text-white font-semibold text-xl uppercase flex justify-center items-center gap-2 p-3 ' >download resume <FaDownload className='text-white' /></button>
+      <a href={resume} download="Nobanita Ayathree Resume.pdf"><button className='bg-orange-400 text-white font-semibold text-xl uppercase flex justify-center items-center gap-2 p-3 ' >download resume <FaDownload className='text-white' /></button></a>
       </div>
       </div>
       </div>
@@ -443,6 +444,9 @@ function App() {
     </div>
   </div>
 )}
+
+{/* Modal 3 */}
+
 
 
     </div>
