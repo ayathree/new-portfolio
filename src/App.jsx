@@ -11,13 +11,14 @@ import { RiFirebaseFill, RiGraduationCapFill, RiTailwindCssFill } from 'react-ic
 import { RxCross1 } from 'react-icons/rx';
 import { IoLogoJavascript } from 'react-icons/io';
 import { SiExpress, SiMongodb, SiVercel } from 'react-icons/si';
-
+import SendEmail from './SendEmail'
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(true);  
   const [showThirdModal, setShowThirdModal] = useState(false);
   const [activeButton, setActiveButton] = useState('education'); 
+  const [getInTouchModal, setGetInTouchModal] = useState(false);
 
   const handleButtonClick = (button) => {
     setActiveButton(button);
@@ -75,8 +76,8 @@ function App() {
         my <span className="text-orange-400">portfolio</span>
       </div>
 
-      <div className="flex justify-center items-center uppercase bg-neutral-800 text-center text-white font-bold text-3xl hover:border-b-2 hover:border-r-2 cursor-pointer hover:border-r-orange-400">
-        get <span className="text-orange-400">in touch</span>
+      <div className="flex justify-center items-center uppercase bg-neutral-800 text-center text-white font-bold text-3xl hover:border-b-2 hover:border-r-2 cursor-pointer hover:border-r-orange-400" onClick={()=> setGetInTouchModal(true)}>
+        get <span className="text-orange-400" >in touch</span>
       </div>
 
       {/* Modal 1 */}
@@ -283,6 +284,11 @@ function App() {
   </div>
   </div>
 )}
+{/* Modal 2 */}
+{getInTouchModal && (
+        <SendEmail></SendEmail>
+      )}
+
 
     </div>
   );
