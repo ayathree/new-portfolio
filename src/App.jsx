@@ -1,4 +1,5 @@
 import { ReactTyped } from 'react-typed';
+import emailjs from "emailjs-com";
 import './App.css';
 import portfolioImage from './assets/file.png';
 import Lottie from 'lottie-react';
@@ -6,12 +7,13 @@ import animation from './assets/Animation - 1732779013753.json';
 import { useState } from 'react';
 import { BsPersonVcardFill } from 'react-icons/bs';
 import { GoPersonFill } from 'react-icons/go';
-import { FaCss3Alt, FaDownload, FaFigma, FaGit, FaHtml5, FaNodeJs, FaReact, FaRegCalendar, FaStar } from 'react-icons/fa';
+import {  FaComments, FaCss3Alt, FaDownload, FaFigma, FaGit, FaGithub, FaHtml5, FaLinkedin, FaLinkedinIn, FaLocationArrow, FaNodeJs, FaReact, FaRegCalendar, FaStar } from 'react-icons/fa';
 import { RiFirebaseFill, RiGraduationCapFill, RiTailwindCssFill } from 'react-icons/ri';
 import { RxCross1 } from 'react-icons/rx';
-import { IoLogoJavascript } from 'react-icons/io';
+import { IoLogoJavascript, IoMdMail } from 'react-icons/io';
 import { SiExpress, SiMongodb, SiVercel } from 'react-icons/si';
-import SendEmail from './SendEmail'
+import {  IoMailOpenSharp, IoPerson } from 'react-icons/io5';
+
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -19,6 +21,44 @@ function App() {
   const [showThirdModal, setShowThirdModal] = useState(false);
   const [activeButton, setActiveButton] = useState('education'); 
   const [getInTouchModal, setGetInTouchModal] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const[modalMessage, setModalMessage] = useState('');
+
+  // FOR sending email
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_e2krris",      // Replace with your EmailJS service ID
+        "template_l7qcoec",     // Replace with your EmailJS template ID
+        {
+            name: formData.name,
+            email: formData.email, // Will be used as reply_to
+            message: formData.message,
+          },
+        "win_flOAaCkkJDyqS"          // Replace with your EmailJS public API key
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          setFormData({ name: "", email: "", message: "" });
+          setModalMessage("Message sent successfully!");
+        },
+        (error) => {
+          console.error("Failed to send email:", error.text);
+          setModalMessage("There was an error. Please try again.");
+        }
+      );
+  };
 
   const handleButtonClick = (button) => {
     setActiveButton(button);
@@ -286,8 +326,123 @@ function App() {
 )}
 {/* Modal 2 */}
 {getInTouchModal && (
-        <SendEmail></SendEmail>
+        <div className="absolute inset-0 flex justify-center items-center bg-black/70 z-10">
+          <div className="bg-neutral-800 p-3 lg:p-6 lg:w-2/3 m-3 max-h-[90vh] overflow-y-auto scrollbar scrollbar-thumb-gray-600 scrollbar-track-white text-center">
+          
+
+          <button
+        className="absolute top-10 lg:right-12 right-2 text-white  text-3xl"
+        onClick={() => setGetInTouchModal(false)}
+      >
+       <RxCross1 />
+      </button>
+     <h2 className="lg:text-6xl text-2xl text-white font-bold mb-4">Get <span className='text-orange-400'>In Touch</span></h2>
+    
+      {/* div 1 */}
+      <div className='flex flex-row justify-center items-center gap-4 mt-5 lg:mt-10'>
+        <hr className='w-1/2 border-t-2 border-white' />
+        <IoMailOpenSharp className='text-2xl text-orange-400' />
+        <hr className='w-1/2 border-t-2 border-white' />
+      </div>
+      
+           
+           <div className='flex md:flex-row flex-col justify-center items-center gap-10 mt-10'>
+            {/* social div */}
+            <div className='bg-black p-7 flex flex-col justify-start items-start gap-3'>
+              <p className='text-orange-400 font-bold text-2xl uppercase '>phone</p>
+              <p className='text-white '>+880-1862986204</p>
+              <p className='text-orange-400 font-bold text-2xl uppercase '>email</p>
+              <p className='text-white '>nobanitaayathree333@gmail.com</p>
+              <p className='text-orange-400 font-bold text-2xl uppercase '>address</p>
+              <p className='text-white '>Chattogram, bangladesh</p>
+              <p className='text-orange-400 font-bold text-2xl uppercase '>social profiles</p>
+              <div className='flex flex-row justify-center items-center gap-5'>
+              
+             <a href="https://www.linkedin.com/in/nobanitaayathree/"><FaLinkedinIn  className='text-3xl text-white bg-blue-600 p-1 ' href='' /></a>
+              <a href="https://github.com/ayathree"> <FaGithub className='text-3xl text-white '  /></a>
+              </div>
+
+            </div>
+            {/* form div */}
+            <div>
+            <p className='text-xl font-bold text-white uppercase  text-start'>Feel free to drop me a line</p>
+            <p className="text-white my-5 text-base text-start">
+            If you have any suggestion, project or even you want to say Hello.... Please fill out the form below and I will reply you shortly.
+            </p>
+            <form onSubmit={sendEmail}>
+            {/* div 1 */}
+            <div className='flex flex-row justify-start items-center gap-2'>
+            <IoPerson className='text-white text-3xl' />
+            <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="w-full mb-2  p-2 rounded border border-gray-400"
+        />
+            </div>
+            {/* div 2 */}
+           <div className='flex flex-row justify-start items-center gap-2'>
+           <IoMdMail className='text-white text-3xl' />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full mb-2 p-2 rounded border border-gray-400"
+        />
+           </div>
+           {/* div 3 */}
+           <div className='flex flex-row justify-start items-center gap-2' >
+           <FaComments className='text-white text-3xl'/>
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          className="w-full mb-2 p-2 rounded border border-gray-400"
+        ></textarea>
+           </div>
+           
+        {/* div 4 */}
+        <div className='flex flex-row justify-center items-center gap-2 mt-5'>
+        <button
+          type="submit"
+          className="w-1/2 bg-green-500  text-white py-2 rounded hover:bg-green-600 flex flex-row justify-center items-center gap-2"
+        >
+          Send Email
+          <FaLocationArrow className='text-white text-xl' />
+        </button>
+        </div>
+       
+          
+    </form>
+            </div>
+           </div>
+          
+            
+          </div>
+        </div>
       )}
+      {/* Modal for success or error message */}
+{modalMessage && (
+  <div className="absolute inset-0 flex justify-center items-center bg-black/70 z-20">
+    <div className="bg-black p-6 rounded-lg text-center border-white border-2 max-w-sm w-full">
+      <p className="text-lg text-white font-bold mb-4">{modalMessage}</p>
+      <button
+        className="px-4 py-2 bg-green-500 text-white font-bold rounded hover:bg-green-600"
+        onClick={() => setModalMessage("")}
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
 
 
     </div>
