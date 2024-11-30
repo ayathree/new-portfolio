@@ -478,6 +478,7 @@ function App() {
         <FaSuitcase  className='text-2xl text-orange-400' />
         <hr className='w-1/2 border-t-2 border-white' />
       </div>
+      <p className='my-3 text-white uppercase'>Tap the Project's images.</p>
       {/*display projects  */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center items-center gap-4 mt-10">
   {projects.map((project) => (
