@@ -1,0 +1,64 @@
+[
+    {
+      "projectName": "ARTISTRY",
+      "projectDescription": "art gallery website",
+      "projectLiveLink": "https://assignment-10-ceab3.web.app/",
+      "projectServerLink": "https://github.com/ayathree/artistry-server",
+      "projectClientLink": "https://github.com/ayathree/artistry-client",
+      "projectImage": "https://i.ibb.co.com/yBfQVhR/image.png",
+      "projectFeatures": [
+        "Full CRUD operations",
+        "Better authentication system",
+        "A user can only check data stored by them not others"
+      ],
+      "usedTechnologies": [
+        "HTML",
+         "CSS",
+          "JavaScript",
+           "React.js",
+            "Node.js",
+             "Express.js",
+              "MongoDB",
+               "Firebase",
+                "Tailwind CSS",
+                 "DaisyUI",
+                  "React Awesome Component"
+      ]
+    },
+    {
+      "projectName": "Best For You",
+      "projectDescription": "alternative information website",
+      "projectLiveLink": "https://best-for-you-2df59.web.app/",
+      "projectServerLink": "https://github.com/ayathree/Best-for-you-server",
+      "projectClientLink": "https://github.com/ayathree/Best-for-you-client",
+      "projectImage": "https://i.ibb.co.com/NN2XWWT/image.png",
+      "projectFeatures": [
+        "On this website one can ask query, recommend for a query",
+        "Employ advanced encryption and security protocols to ensure user data is protected from unauthorized access",
+         "Enable anonymous browsing modes to protect personal information",
+        "Implementation of JWT token"
+      ],
+      "usedTechnologies": [
+        "Axios", "JWT", "HTML", "CSS", "JavaScript", "React.js", "Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "DaisyUI","Meraki UI", "React Awesome Components"
+      ]
+    },
+    {
+      "projectName": "GYMNECIA",
+      "projectDescription": "Fitness Gym website",
+      "projectLiveLink": "https://fitness-tracker-e7f1d.web.app/",
+      "projectServerLink": "https://github.com/ayathree/gimnecia-server",
+      "projectClientLink": "https://github.com/ayathree/gimnecia-client",
+      "projectImage": "https://i.ibb.co.com/59dZZ0R/image.png",
+      "projectFeatures": [
+        "There is up voting and down voting system in this website.",
+        "There is payment system",
+        "Admin can select a requested trainer to be a trainer and also can delete them or reject them",
+         "A user can booked selected class by pay and became a payed member"
+      ],
+      "usedTechnologies": [
+        "Axios", "JWT", "Stripe.js react", "HTML", "CSS", "JavaScript", "React.js", "Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS", "React Flowbite", "Mamba UI", "Meraki UI", "React Awesome Components"
+        
+      ]
+    }
+  ]
+  

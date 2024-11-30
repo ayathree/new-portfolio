@@ -4,16 +4,17 @@ import './App.css';
 import portfolioImage from './assets/file.png';
 import Lottie from 'lottie-react';
 import animation from './assets/Animation - 1732779013753.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BsPersonVcardFill } from 'react-icons/bs';
 import { GoPersonFill } from 'react-icons/go';
-import {  FaComments, FaCss3Alt, FaDownload, FaFigma, FaGit, FaGithub, FaHtml5,  FaLinkedinIn, FaLocationArrow, FaNodeJs, FaReact, FaRegCalendar, FaStar } from 'react-icons/fa';
+import {  FaComments, FaCss3Alt, FaDownload, FaFigma, FaGit, FaGithub, FaHtml5,  FaLinkedinIn, FaLocationArrow, FaNodeJs, FaReact, FaRegCalendar, FaStar, FaSuitcase } from 'react-icons/fa';
 import { RiFirebaseFill, RiGraduationCapFill, RiTailwindCssFill } from 'react-icons/ri';
 import { RxCross1 } from 'react-icons/rx';
 import { IoLogoJavascript, IoMdMail } from 'react-icons/io';
 import { SiExpress, SiMongodb, SiVercel } from 'react-icons/si';
 import {  IoMailOpenSharp, IoPerson } from 'react-icons/io5';
 import resume from './assets/Nobanita Ayathree Resume.pdf'
+import Details from './Details';
 
 
 function App() {
@@ -28,6 +29,17 @@ function App() {
     message: "",
   });
   const[modalMessage, setModalMessage] = useState('');
+  const[myPortfolioModal,setMyPortfolioModal]=useState(false);
+
+  // for project
+  const[projects,setProjects]=useState([]);
+
+  useEffect(()=>{
+    fetch('projects.json')
+    .then(res=> res.json())
+    .then(data=>setProjects(data))
+  },[])
+  const [selectedProject, setSelectedProject] = useState(null);
 
   // FOR sending email
   const handleChange = (e) => {
@@ -113,7 +125,7 @@ function App() {
         about <span className="text-orange-400">me</span>
       </div>
 
-      <div className="flex justify-center items-center uppercase bg-neutral-800 text-center text-white font-bold text-3xl hover:border-b-2 hover:border-r-2 cursor-pointer hover:border-r-orange-400">
+      <div className="flex justify-center items-center uppercase bg-neutral-800 text-center text-white font-bold text-3xl hover:border-b-2 hover:border-r-2 cursor-pointer hover:border-r-orange-400" onClick={()=> setMyPortfolioModal(true)}>
         my <span className="text-orange-400">portfolio</span>
       </div>
 
@@ -134,7 +146,7 @@ function App() {
       >
        <RxCross1 />
       </button>
-     <h2 className="lg:text-6xl text-2xl text-white font-bold mb-4">About <span className='text-orange-400'>Me</span></h2>
+     <h2 className="lg:text-6xl text-2xl text-white font-bold mb-4 uppercase">About <span className='text-orange-400'>Me</span></h2>
     
       {/* div 1 */}
       <div className='flex flex-row justify-center items-center gap-4 mt-5 lg:mt-10'>
@@ -337,7 +349,7 @@ function App() {
       >
        <RxCross1 />
       </button>
-     <h2 className="lg:text-6xl text-2xl text-white font-bold mb-4">Get <span className='text-orange-400'>In Touch</span></h2>
+     <h2 className="lg:text-6xl text-2xl text-white font-bold mb-4 uppercase">Get <span className='text-orange-400'>In Touch</span></h2>
     
       {/* div 1 */}
       <div className='flex flex-row justify-center items-center gap-4 mt-5 lg:mt-10'>
@@ -446,6 +458,77 @@ function App() {
 )}
 
 {/* Modal 3 */}
+{myPortfolioModal && (
+  <div className=''>
+    <div className="absolute inset-0 flex justify-center items-center  bg-black/70 z-10">
+    <div className="bg-neutral-800 p-3 lg:p-6 lg:w-2/3 m-3 max-h-[90vh] overflow-y-auto scrollbar scrollbar-thumb-gray-600 scrollbar-track-white text-center">
+   
+     
+      <button
+        className="absolute top-10 lg:right-12 right-2 text-white  text-3xl"
+        onClick={() => setMyPortfolioModal(false)}
+      >
+       <RxCross1 />
+      </button>
+     <h2 className="lg:text-6xl text-2xl text-white font-bold mb-4 uppercase">My <span className='text-orange-400'>Portfolio</span></h2>
+    
+      {/* div 1 */}
+      <div className='flex flex-row justify-center items-center gap-4 mt-5 lg:mt-10'>
+        <hr className='w-1/2 border-t-2 border-white' />
+        <FaSuitcase  className='text-2xl text-orange-400' />
+        <hr className='w-1/2 border-t-2 border-white' />
+      </div>
+      {/*display projects  */}
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center items-center gap-4 mt-10">
+  {projects.map((project) => (
+    <div key={project.id} className="relative group cursor-pointer"   onClick={() => setSelectedProject(project)}>
+      {/* Image */}
+      <img
+        className="h-[30vh] w-full object-cover"
+        src={project.projectImage}
+        alt=""
+      />
+      {/* Overlay */}
+      <div
+        className="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      ></div>
+     {/* Text */}
+     <div
+        className="absolute inset-0 flex items-center justify-center text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        {project.projectName}
+      </div>
+    </div>
+  ))}
+  {/* Modal */}
+{selectedProject && (
+        <div className="absolute inset-0 flex justify-center items-center  bg-black/70 z-10">
+          <div className="bg-neutral-800 p-3 lg:p-6 lg:w-2/3 m-3 max-h-[90vh] overflow-y-auto scrollbar scrollbar-thumb-gray-600 scrollbar-track-white text-center">
+            {/* Close Button */}
+            <button
+              className="absolute top-2 right-2  text-white px-2 py-1 rounded"
+              onClick={() => setSelectedProject(null)} // Close modal
+            >
+             <RxCross1 className='bg-red-600 text-white font-bold' />
+            </button>
+            {/* Project Details */}
+            <Details project={selectedProject} />
+          </div>
+        </div>
+      )}
+</div>
+     
+    
+
+      
+      <p className="text-gray-700">
+       
+      </p>
+      
+    </div>
+  </div>
+  </div>
+)}
 
 
 
