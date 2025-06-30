@@ -178,7 +178,7 @@ function App() {
           <ol className='text-start'>
             <li className='uppercase text-white text-xs mb-3'><span className='font-bold'>first name :</span> Nobanita</li>
             <li className='uppercase text-white text-xs mb-3'><span className='font-bold'>last name :</span> Ayathree</li>
-            <li className='uppercase text-white text-xs mb-3'><span className='font-bold'>date of birth :</span> 5 january 2000</li>
+            
           </ol>
         </div>
         <div>

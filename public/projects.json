@@ -1,15 +1,15 @@
 [
     {
-      "projectName": "ARTISTRY",
-      "projectDescription": "art gallery website",
-      "projectLiveLink": "https://assignment-10-ceab3.web.app/",
-      "projectServerLink": "https://github.com/ayathree/artistry-server",
-      "projectClientLink": "https://github.com/ayathree/artistry-client",
-      "projectImage": "https://i.ibb.co.com/yBfQVhR/image.png",
+      "projectName": "True Beauty",
+      "projectDescription": "E-commerce cosmetics website",
+      "projectLiveLink": "https://true-beauty-2d58d.web.app/",
+      "projectClientLink": "https://github.com/ayathree/true-beauty-client",
+      "projectServerLink": "https://github.com/ayathree/true-beauty-server", 
+      "projectImage": "https://i.ibb.co/tp1f5dsJ/image.png",
       "projectFeatures": [
-        "Full CRUD operations",
-        "Better authentication system",
-        "A user can only check data stored by them not others"
+        "Users Features(full description on github)",
+        "Admin Features(full description on github)",
+        "System Features(full description on github)"
       ],
       "usedTechnologies": [
         "HTML",
@@ -21,7 +21,24 @@
               "MongoDB",
                "Firebase",
                 "Tailwind CSS",
-                 "DaisyUI",
+                 " Vercel",
+                  "React Router" ,
+                  " Stripe", 
+                   "Axios",
+                   " tanstack query",
+                   " date-fns ",
+                    "react-datepicker",
+                     "react-hot-toast",
+                      "react-icons",
+                       "react-rating-stars-component",
+                        "react-slick",
+                        "react-tabs",
+                         "sweetalert2",
+                         "swiper",
+                         "cors",
+                         "cookie-parser",
+                          "dotenv",
+                          "lodash",
                   "React Awesome Component"
       ]
     },
