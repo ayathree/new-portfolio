@@ -1,11 +1,11 @@
 [
     {
       "projectName": "True Beauty",
-      "projectDescription": "E-commerce cosmetics website",
+      "projectDescription": "E-commerce cosmetics website(with AI POWERED VOICE ASSISTANT)",
       "projectLiveLink": "https://true-beauty-2d58d.web.app/",
       "projectClientLink": "https://github.com/ayathree/true-beauty-client",
       "projectServerLink": "https://github.com/ayathree/true-beauty-server", 
-      "projectImage": "https://i.ibb.co/tp1f5dsJ/image.png",
+      "projectImage": "https://i.ibb.co.com/BHdF2GR0/image.png",
       "projectFeatures": [
         "Users Features(full description on github)",
         "Admin Features(full description on github)",
@@ -20,6 +20,9 @@
              "Express.js",
               "MongoDB",
                "Firebase",
+               "Webkit",
+               "Speech-recognition",
+               "Speech-synthesis",
                 "Tailwind CSS",
                  " Vercel",
                   "React Router" ,
